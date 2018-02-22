@@ -5,6 +5,7 @@
 
 :: bitcrush.py 
 :: asahala 2018
+:: <a href="https://github.com/asahala/Bitcrush/">https://github.com/asahala/Bitcrush/</a>
 
 ==================================================================================
 HOW TO USE? ======================================================================
@@ -19,6 +20,41 @@ Running from the commandline is preferred. See instructions later on this file.
 For instructions on running this from the source code, see default() in main.py
 
 3) create /output/ folder wherever you store your *.py files
+
+==================================================================================
+ALL COMMANDLINE PARAMETERS =======================================================
+==================================================================================
+
+The order of the parameters is free. Most parameters have abbreviated aliases.
+See more detailed information later in this document.
+
+python main.py [parameters]
+
+  -h, --help                             
+  -f, --filename [FILENAME]                     (mandatory)
+  -m, --screenmode [SCREENMODE]                 (mandatory)
+  -b, --bitdepth [BITDEPTH]             
+  -r, --resolution [WIDTH] [HEIGHT]
+  -a, --adjust [BRIGHTNESS] [CONTRAST]
+  -V, --vertical-lacing
+  -H, --horizontal-lacing
+  -x, --multiplier [MULTIPLIER]
+  -t, --save-true-resolution
+  -P, --preserve-aspect-ratio
+  -v, --verbose
+  -R, --rasterize
+  --rasterize-scanlines
+  -d, --dither
+  -p, --palette [PALETTE NUMBER]
+  -c, --composite [COMPOSITE MODE]
+  -l, --low-intensity
+  -s, --slices [NUMBER OF SLICES]
+  --fast-ham
+  --no-fringing
+  --ordered-transitions
+  -S, --show-preview
+  -n, --no-save
+  --debug
 
 ==================================================================================
 WHAT ARE FIXED AND NON-FIXED PALETTE SCREENMODES? ================================
@@ -81,6 +117,9 @@ Often the best results are achieved by using bit-depths from 6 upwards.
 <i>Image: Diagonally rasterized 160x200 EGA in bit-depths of 4, 6, 8 and 18
 (from top left to bottom right)</i>
 
+<a href="palette.png"><img src="ex_fixed_bitdepths2.png"/></a>
+<i>Image: Shifting color space on C64 with bit-depths of: 4, 6, 12, 18 
+(from top left to bottom right). Click to see the palette in 24-bit RGB.</i>
 
 ==================================================================================
 RESOLUTION SETTINGS ==============================================================
@@ -91,8 +130,8 @@ the screenmode specific default settings are used.
 
   --resolution WIDTH HEIGHT  Set resolution.
   --preserve-aspect-ratio    If not used, the image is scaled only to w/h.
-  --horizontal-lacing        Double pixel width width (like in Amiga, C64 or
-                             old Sierra-Online AGI games)
+  --horizontal-lacing        Double pixel width (like on Amiga, C64 or
+                             in old Sierra-Online AGI games)
   --vertical-lacing          Double the number of scanlines.
 
 
@@ -124,16 +163,16 @@ PC CGA unique parameters:
   --low-intensity            Set intensity bit off.
   --palette INT              Set CGA palette. Options are:
 
-        0: black-cyan-purple-white (2 pix per color)
-        1: black-red-green-yellow (2 pix per color)
-        2: black-cyan-red-white (2 pix per color)
-        3: black-white (4 pix per color)
+        0: black-cyan-purple-white       (2 pix per color)
+        1: black-red-green-yellow        (2 pix per color)
+        2: black-cyan-red-white          (2 pix per color)
+        3: black-white                   (4 pix per color)
 
   --composite INT            CGA composite modes:
              
         0: Convert to regular CGA as shown on an RGB monitor (default)
         1: Convert regular CGA image to 16-color composite
-        2: Convert any image into RGB rasters that will produce
+        2: Convert any image into RGB raster that will produce
            16 colors on composite
         3: Convert any image as if it was a CGA shown on a TV with
            composite input
@@ -199,40 +238,6 @@ adjusted or turned off.
 <a href="ex_ham_large.png"><img src="ex_ham.png"/></a>
 <i>Image: HAM6 with optimal 16 color palette (left). Ordered transitions with a
 single color palette to demostrate fringing (right).</i>
-
-==================================================================================
-ALL COMMANDLINE PARAMETERS =======================================================
-==================================================================================
-
-The order of the parameters is free. Most parameters have abbreviated aliases.
-
-python main.py [parameters]
-
-  -h, --help                             
-  -f, --filename [FILENAME]                     (mandatory)
-  -m, --screenmode [SCREENMODE]                 (mandatory)
-  -b, --bitdepth [BITDEPTH]             
-  -r, --resolution [WIDTH] [HEIGHT]
-  -a, --adjust [BRIGHTNESS] [CONTRAST]
-  -V, --vertical-lacing
-  -H, --horizontal-lacing
-  -x, --multiplier [MULTIPLIER]
-  -t, --save-true-resolution
-  -P, --preserve-aspect-ratio
-  -v, --verbose
-  -R, --rasterize
-  --rasterize-scanlines
-  -d, --dither
-  -p, --palette [PALETTE NUMBER]
-  -c, --composite [COMPOSITE MODE]
-  -l, --low-intensity
-  -s, --slices [NUMBER OF SLICES]
-  --fast-ham
-  --no-fringing
-  --ordered-transitions
-  -S, --show-preview
-  -n, --no-save
-  --debug
 
 
 ==================================================================================
@@ -361,7 +366,12 @@ Prob: My EGA, CGA, C64 or Gameboy image still looks dark.
 Sol:  Try adjusting the brightness and contrast with --adjust
 
 Prob: It still looks like crap.
-Sol:  Some images just don't translate well into certain screenmodes.
+Sol:  --rasterize may improve the result. Then again, some images just don't 
+      translate well into certain screenmodes (especially if the color spaces are 
+      too far apart).
+
+Prob: CGA crashes on resolutions like 321x199½
+Sol: Use 320x200. The composite conversion code is lazily written.
 
 ==================================================================================
 
