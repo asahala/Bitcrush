@@ -31,7 +31,7 @@ See more detailed information later in this document.
 python main.py [parameters]
 
   -h, --help                             
-  -f, --filename [FILENAME]                     (mandatory)
+  -f, --filename [FILENAME or FILELIST]         (mandatory)
   -m, --screenmode [SCREENMODE]                 (mandatory)
   -b, --bitdepth [BITDEPTH]             
   -r, --resolution [WIDTH] [HEIGHT]
@@ -55,6 +55,16 @@ python main.py [parameters]
   -S, --show-preview
   -n, --no-save
   --debug
+
+==================================================================================
+EXAMPLE USAGE ====================================================================
+==================================================================================
+
+python main.py -f test.png -b 12 -r 320 200 -H -m EGA --rasterize -S 
+
+Produces an EGA image from (-f) test.png in horizontally laced (-H) 320x200 
+resolution (-r) with rasterized (--rasterize) colors and 12-bit recoloring (-b). 
+Image will be previewed (-S).
 
 ==================================================================================
 WHAT ARE FIXED AND NON-FIXED PALETTE SCREENMODES? ================================
@@ -113,7 +123,7 @@ bit-depth down.
 
 Often the best results are achieved by using bit-depths from 6 upwards.
 
-<a href=""ex_fixed_bitdepths_large.png"><img src="ex_fixed_bitdepths.png"/></a>
+<a href="ex_fixed_bitdepths_large.png"><img src="ex_fixed_bitdepths.png"/></a>
 <i>Image: Diagonally rasterized 160x200 EGA in bit-depths of 4, 6, 8 and 18
 (from top left to bottom right)</i>
 
@@ -152,7 +162,7 @@ function default() in main.py
   --bitdepth INT             Adjust color space.
 
 <a href="ex_raster_large.png"><img src="ex_raster.png"/></a>
-<i>Image: Non-rasterized and rasterized EGA.</i>
+<i>Image: Non-rasterized and rasterized EGA. (Click to see the original).</i>
 
 <a href="ex_gameboy_large.png"><img src="ex_gameboy.png"/></a>
 <i>Image: Non-rasterized and rasterized Gameboy.</i>
@@ -219,7 +229,7 @@ standard fixed-palette features: --rasterize, --rasterize-scanlines and --dither
 
 ---------------------------------------------------------------------------------
 
-Amiga EHB can be sliced. Images that use no slicing (i.e. number of slices = 1) 
+Amiga EHB can be sliced. Images that don't use slicing (i.e. number of slices = 1) 
 can be --rasterize'd.
 
    --slices INT             Define number of slices. Default 1.
@@ -254,7 +264,7 @@ General settings:
     OPTIONAL: Print instance variables.
 
  --multiplier [int]   -x [int]
-    OPTIONAL: Image dimensions are multiplied.
+    OPTIONAL: Image dimensions are multiplied by a factor of [int].
 
  --no-save   -n
     OPTIONAL: Do not save image.
@@ -344,16 +354,6 @@ Image processing parameters:
   --ordered-transitions                      (HAM only)
      OPTIONAL: Force fringing algorithm to modify pixels in R->G->B order.
      
-==================================================================================
-EXAMPLE USAGE ====================================================================
-==================================================================================
-
-python main.py -f test.png -b 12 -r 320 200 -H -m EGA --rasterize -S 
-
-Produces an EGA image from (-f) test.png in horizontally laced (-H) 320x200 
-resolution (-r) with rasterized (--rasterize) colors and 12-bit recoloring (-b). 
-Image will be previewed (-S).
-
 
 ==================================================================================
 Troubleshooting ==================================================================
@@ -370,12 +370,14 @@ Sol:  --rasterize may improve the result. Then again, some images just don't
       translate well into certain screenmodes (especially if the color spaces are 
       too far apart).
 
-Prob: CGA crashes on resolutions like 321x199½
-Sol: Use 320x200. The composite conversion code is lazily written.
+Prob: CGA crashes on resolutions like 321x199Â½
+Sol:  Use 320x200. The composite conversion code is lazily written.
 
 ==================================================================================
 
--- 2018-02-22 21:37
+-- 2018-02-22 21:37    first upload
+-- 2020-11-27 03:49    fixed broken links
+
 <pre>
 </body>
 </html>
