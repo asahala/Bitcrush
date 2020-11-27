@@ -722,7 +722,7 @@ class HAM(Converter):
     Fringing ´algorithm´ may be changed (default 1):
 
         0: Fast comparison. Does not look at the base palette if the
-           left pixel looks close enough.
+           left pixel looks close enough (algorithm is bugged)
         1: Accurate comparison. Better result but 30-50 % slower.
 
     Pixel ´transitions´ can be controlled as well (default 1):
