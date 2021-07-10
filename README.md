@@ -5,3 +5,7 @@ GNU General Public License v3.0
 
 ## Requirements
 Python 3.4 or newer, [Pillow](https://pypi.org/project/Pillow/) (tested on version 8.1.0).
+
+## Example
+
+![alt text](http://www.ling.helsinki.fi/~asahala/bitcrush/ex_raster_large.png)
