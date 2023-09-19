@@ -13,4 +13,4 @@ GNU General Public License v3.0
 Python 3.4 or newer, [Pillow](https://pypi.org/project/Pillow/) (tested on version 8.1.0).
 
 ## Examples
-![alt text](http://mv.helsinki.fi/home/asahala/bitcrush/ex_raster_large.png)
+![alt text](http://www.mv.helsinki.fi/home/asahala/bitcrush/ex_raster_large.png)
