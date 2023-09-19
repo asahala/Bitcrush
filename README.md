@@ -6,7 +6,7 @@ GNU General Public License v3.0
 ## Screenmodes
 * **PC**: SVGA, VGA, MCGA, EGA (hires/normal), CGA (composite, RGBI)
 * **Amiga**: HAM8, HAM6, EHB (sliced/normal), OCS (hires/lowres)
-* **Commodore 64**the 
+* **Commodore 64** 
 * **Nintendo Gameboy**
 
 ## Requirements
