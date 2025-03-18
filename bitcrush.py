@@ -101,10 +101,14 @@ class Converter(object):
 
     def adjust(self, b_factor, c_factor):
         """ Adjust brightness/contrast. """
-        img = self.image
-        i = ImageEnhance.Brightness(img).enhance(b_factor)
-        i = ImageEnhance.Contrast(i).enhance(c_factor)
-        self.image = i
+        try:
+            img = self.image
+            i = ImageEnhance.Brightness(img).enhance(b_factor)
+            i = ImageEnhance.Contrast(i).enhance(c_factor)
+            self.image = i
+        except:
+            print("[WARN] unable to enhance Brightness and Contrast, ignoring this step.\n")
+            pass
 
     def _resize(self):
         """ Resize image for previewing and saving """
