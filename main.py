@@ -42,8 +42,8 @@ def default():
     """ Default mode for playing with different settings; see
     readme.txt for more info on setting variables.
     See kwargs for set_properties() from commandline processing. """
-    filename = 'maisema2.png'
-    pic = bitcrush.CGA()                         # select mode
+    filename = 'tropic.png'
+    pic = bitcrush.C64()                         # select mode
     pic.load_image(filename)                     # load input picture
     pic.set_properties(bitdepth=12, rasterize=1) # define settings
     pic.process()                                # convert image
@@ -107,6 +107,7 @@ def main():
     args = get_args()
     """ Enter default mode if commandline is not used """
     if args.filename is None:
+        print('No parameters given. Running default() with a test image.')
         default()
     else:
         fname = args.filename
