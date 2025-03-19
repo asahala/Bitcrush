@@ -36,6 +36,7 @@ to adjust the brightness of the image.
 ## CGA in composite mode
 
 ![alt text](http://www.mv.helsinki.fi/home/asahala/bitcrush/tropic-cga.png)
+
 `python main.py -f tropic.png -m CGA -H -S -c 3 --palette 1`
 
 ## Commodore 64
