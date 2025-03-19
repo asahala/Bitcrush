@@ -31,7 +31,7 @@ to adjust the brightness of the image.
 ## EGA Hi-res mode (as in PC Lemmings intermission screens)
 ![alt text](http://www.mv.helsinki.fi/home/asahala/bitcrush/tropic-egahi.png)
 
-`python main.py -f tropic.png -m EGA -r 640 350 -b 6`
+`python main.py -f tropic.png -m EGA -r 640 350 -b 14`
 
 ## CGA in composite mode
 ![alt text](http://www.mv.helsinki.fi/home/asahala/bitcrush/tropic-cga.png)
