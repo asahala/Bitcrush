@@ -23,7 +23,7 @@ to adjust the brightness of the image.
 ## Original image in True color
 ![alt text](http://www.mv.helsinki.fi/home/asahala/bitcrush/tropic.png)
 
-## EGA (mimicking Leisure Suit Larry 3 style)
+## EGA
 ![alt text](http://www.mv.helsinki.fi/home/asahala/bitcrush/tropic-ega.png)
 
 `python main.py -f tropic.png -m EGA --multiplier 2 --rasterize -b 10`
