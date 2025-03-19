@@ -29,7 +29,7 @@ to adjust the brightness of the image.
 `python main.py -f tropic.png -m EGA --multiplier 2 --rasterize -b 10`
 
 ## EGA Hi-res mode (as in PC Lemmings intermission screens)
-![alt text](http://www.mv.helsinki.fi/home/asahala/bitcrush/tropic-egahi.png)
+![alt text](http://www.mv.helsinki.fi/home/asahala/bitcrush/tropic-egahires.png)
 
 `python main.py -f tropic.png -m EGA -r 640 350 -b 14`
 
