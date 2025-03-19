@@ -23,7 +23,7 @@ to adjust the brightness of the image.
 ## Original image in True color
 ![alt text](http://www.mv.helsinki.fi/home/asahala/bitcrush/tropic.png)
 
-## EGA
+## EGA (mimicking Leisure Suit Larry 3 style)
 ![alt text](http://www.mv.helsinki.fi/home/asahala/bitcrush/tropic-ega.png)
 
 `python main.py -f tropic.png -m EGA --multiplier 2 --rasterize -b 10`
@@ -34,31 +34,31 @@ to adjust the brightness of the image.
 `python main.py -f tropic.png -m EGA -r 640 350 -b 6`
 
 ## CGA in composite mode
-
 ![alt text](http://www.mv.helsinki.fi/home/asahala/bitcrush/tropic-cga.png)
 
 `python main.py -f tropic.png -m CGA -H -S -c 3 --palette 1`
 
-## Commodore 64
+## Super VGA
+![alt text](http://www.mv.helsinki.fi/home/asahala/bitcrush/tropic-svga.png)
 
+`python main.py -f tropic.png -m MCGA -r 640 480`
+
+## Commodore 64
 ![alt text](http://www.mv.helsinki.fi/home/asahala/bitcrush/tropic-c64.png)
 
 `main.py -f tropic.png -m C64  -b 12 --rasterize -H`
 
 ## Amiga Extra Half-brite (EHB)
-
 ![alt text](http://www.mv.helsinki.fi/home/asahala/bitcrush/tropic-ehb.png)
 
 `python main.py -f tropic.png -m EHB`
 
 ## Amiga Hold-and-modify (HAM)
-
 ![alt text](http://www.mv.helsinki.fi/home/asahala/bitcrush/tropic-ham.png)
 
 `python main.py -f tropic.png -m HAM -r 320 256`
 
 ## Nintendo Gameboy
-
 ![alt text](http://www.mv.helsinki.fi/home/asahala/bitcrush/tropic-gameboy.png)
 
 `python main.py -f tropic.png -m Gameboy -S -b 5 --rasterize --multiplier=2`
